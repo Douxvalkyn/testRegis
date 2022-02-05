@@ -22,8 +22,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import entities.Prenom;
+import repositories.PrenomRepository;
 
 @Controller
 @SpringBootApplication
@@ -32,9 +36,11 @@ public class Main {
   @Value("${spring.datasource.url}")
   private String dbUrl;
 
-  @Autowired
-  private DataSource dataSource;
+//  @Autowired
+//  private DataSource dataSource;
 
+  private ApplicationContext appContext;
+  
   public static void main(String[] args) throws Exception {
     SpringApplication.run(Main.class, args);
   }
@@ -44,8 +50,18 @@ public class Main {
     return "index";
   }
   
+
+  
   @RequestMapping("/test")
   String test() {
+	  
+	  PrenomRepository prenomRepo = appContext.getBean(PrenomRepository.class);
+	  Prenom p1=new Prenom();
+	  p1.setEffectif(25);
+	  p1.setLibelle("Aude");
+	  p1.setTauxMention(62);
+	  prenomRepo.save(p1);
+	  
     return "test";
   }
 
