@@ -54,7 +54,7 @@ public class Main {
     SpringApplication.run(Main.class, args);
   }
   
-  private ApplicationContext appContext;
+  //private ApplicationContext appContext;
   
   
 //  public void run(String... args) {
@@ -75,13 +75,13 @@ public class Main {
   
   @RequestMapping("/test")
   String test() {
-		 PrenomRepository prenomRepo = appContext.getBean(PrenomRepository.class);
-		 
-		 Prenom p1 = new Prenom();
-		 p1.setEffectif(200);
-		 p1.setLibelle("Alban");
-		 p1.setTauxMention(62);
-		 Prenom managedP1 = prenomRepo.save(p1);
+//		 PrenomRepository prenomRepo = appContext.getBean(PrenomRepository.class);
+//		 
+//		 Prenom p1 = new Prenom();
+//		 p1.setEffectif(200);
+//		 p1.setLibelle("Alban");
+//		 p1.setTauxMention(62);
+//		 Prenom managedP1 = prenomRepo.save(p1);
     return "test";
   }
 
