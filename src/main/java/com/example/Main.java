@@ -57,16 +57,16 @@ public class Main {
   private ApplicationContext appContext;
   
   
-  public void run(String... args) {
-	 PrenomRepository prenomRepo = appContext.getBean(PrenomRepository.class);
-	 
-	 Prenom p1 = new Prenom();
-	 p1.setEffectif(200);
-	 p1.setLibelle("Alban");
-	 p1.setTauxMention(62);
-	 Prenom managedP1 = prenomRepo.save(p1);
-	 
-  }
+//  public void run(String... args) {
+//	 PrenomRepository prenomRepo = appContext.getBean(PrenomRepository.class);
+//	 
+//	 Prenom p1 = new Prenom();
+//	 p1.setEffectif(200);
+//	 p1.setLibelle("Alban");
+//	 p1.setTauxMention(62);
+//	 Prenom managedP1 = prenomRepo.save(p1);
+//	 
+//  }
 
   @RequestMapping("/")
   String index() {
@@ -75,6 +75,13 @@ public class Main {
   
   @RequestMapping("/test")
   String test() {
+		 PrenomRepository prenomRepo = appContext.getBean(PrenomRepository.class);
+		 
+		 Prenom p1 = new Prenom();
+		 p1.setEffectif(200);
+		 p1.setLibelle("Alban");
+		 p1.setTauxMention(62);
+		 Prenom managedP1 = prenomRepo.save(p1);
     return "test";
   }
 
