@@ -52,17 +52,17 @@ public class Main {
   
 
   
-  @RequestMapping("/test")
-  String test() {
-	  
-	  PrenomRepository prenomRepo = appContext.getBean(PrenomRepository.class);
-	  Prenom p1=new Prenom();
-	  p1.setEffectif(25);
-	  p1.setLibelle("Aude");
-	  prenomRepo.save(p1);
-	  
-    return "test";
-  }
+//  @RequestMapping("/test")
+//  String test() {
+//	  
+//	  PrenomRepository prenomRepo = appContext.getBean(PrenomRepository.class);
+//	  Prenom p1=new Prenom();
+//	  p1.setEffectif(25);
+//	  p1.setLibelle("Aude");
+//	  prenomRepo.save(p1);
+//	  
+//    return "test";
+//  }
 
 //  @RequestMapping("/db")
 //  String db(Map<String, Object> model) {

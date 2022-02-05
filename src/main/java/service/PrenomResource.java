@@ -12,7 +12,7 @@ import entities.Prenom;
 import repositories.PrenomRepository;
 
 @RestController
-@RequestMapping(path="/prenom")
+@RequestMapping(path="prenom")
 public class PrenomResource {
 
 	@Autowired
