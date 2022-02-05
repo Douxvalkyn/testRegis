@@ -16,29 +16,23 @@
 
 package com.example;
 
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Map;
-
-import javax.sql.DataSource;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.zaxxer.hikari.HikariConfig;
-import com.zaxxer.hikari.HikariDataSource;
-
-import entities.Prenom;
-import repositories.PrenomRepository;
 
 @Controller
 @SpringBootApplication
@@ -53,36 +47,10 @@ public class Main {
   public static void main(String[] args) throws Exception {
     SpringApplication.run(Main.class, args);
   }
-  
-  //private ApplicationContext appContext;
-  
-  
-//  public void run(String... args) {
-//	 PrenomRepository prenomRepo = appContext.getBean(PrenomRepository.class);
-//	 
-//	 Prenom p1 = new Prenom();
-//	 p1.setEffectif(200);
-//	 p1.setLibelle("Alban");
-//	 p1.setTauxMention(62);
-//	 Prenom managedP1 = prenomRepo.save(p1);
-//	 
-//  }
 
   @RequestMapping("/")
   String index() {
     return "index";
-  }
-  
-  @RequestMapping("/test")
-  String test() {
-//		 PrenomRepository prenomRepo = appContext.getBean(PrenomRepository.class);
-//		 
-//		 Prenom p1 = new Prenom();
-//		 p1.setEffectif(200);
-//		 p1.setLibelle("Alban");
-//		 p1.setTauxMention(62);
-//		 Prenom managedP1 = prenomRepo.save(p1);
-    return "test";
   }
 
   @RequestMapping("/db")
