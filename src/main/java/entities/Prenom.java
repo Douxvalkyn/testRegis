@@ -2,13 +2,18 @@ package entities;
 
 import java.util.Objects;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 
-//@Entity
+
+@Entity
 public class Prenom {
 
-	//@Id
-	//@GeneratedValue(strategy= GenerationType.AUTO)
+	@Id
+	@GeneratedValue(strategy= GenerationType.AUTO)
 	private int id;
 	private String libelle;
 	private int effectif;
