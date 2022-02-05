@@ -17,7 +17,6 @@ public class Prenom {
 	private int id;
 	private String libelle;
 	private int effectif;
-	private int tauxMention;
 	
 	
 	
@@ -37,15 +36,12 @@ public class Prenom {
 	public void setEffectif(int effectif) {
 		this.effectif = effectif;
 	}
-	public int getTauxMention() {
-		return tauxMention;
-	}
-	public void setTauxMention(int tauxMention) {
-		this.tauxMention = tauxMention;
-	}
+
+
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(effectif, libelle, tauxMention);
+		return Objects.hash(effectif, id, libelle);
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -56,11 +52,11 @@ public class Prenom {
 		if (getClass() != obj.getClass())
 			return false;
 		Prenom other = (Prenom) obj;
-		return effectif == other.effectif && Objects.equals(libelle, other.libelle) && tauxMention == other.tauxMention;
+		return effectif == other.effectif && id == other.id && Objects.equals(libelle, other.libelle);
 	}
 	@Override
 	public String toString() {
-		return "Prenom [libelle=" + libelle + ", effectif=" + effectif + ", tauxMention=" + tauxMention + "]";
+		return "Prenom [id=" + id + ", libelle=" + libelle + ", effectif=" + effectif + "]";
 	}
 	
 	
