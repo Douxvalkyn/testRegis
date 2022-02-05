@@ -1,5 +1,5 @@
-CREATE TABLE public.prenom (
-    id integer NOT NULL,
-    libelle character varying(50) NOT NULL,
-    effectif integer NOT NULL
+CREATE TABLE prenom (
+    id int,
+    libelle varchar(50),
+    effectif int
 );
