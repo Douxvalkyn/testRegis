@@ -55,12 +55,12 @@ public class Main {
   @RequestMapping("/test")
   String test() {
 	  
-	  PrenomRepository prenomRepo = appContext.getBean(PrenomRepository.class);
-	  Prenom p1=new Prenom();
-	  p1.setEffectif(25);
-	  p1.setLibelle("Aude");
-	  p1.setTauxMention(62);
-	  prenomRepo.save(p1);
+//	  PrenomRepository prenomRepo = appContext.getBean(PrenomRepository.class);
+//	  Prenom p1=new Prenom();
+//	  p1.setEffectif(25);
+//	  p1.setLibelle("Aude");
+//	  p1.setTauxMention(62);
+//	  prenomRepo.save(p1);
 	  
     return "test";
   }
