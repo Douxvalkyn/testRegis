@@ -8,13 +8,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.entities.Prenom;
 import com.example.repositories.PrenomRepository;
 
-//@Controller
+@Controller
 @SpringBootApplication
 public class Main {
 
@@ -34,10 +35,10 @@ public class Main {
   @Autowired
   private ApplicationContext appContext;
 
-//  @RequestMapping("/")
-//  String index() {
-//    return "index";
-//  }
+  @RequestMapping("/")
+  String index() {
+    return "index";
+  }
   
   public void run(String... args) {
 	  PrenomRepository prenomRepo = appContext.getBean(PrenomRepository.class);
@@ -57,17 +58,7 @@ public class Main {
 	
 }
   
-//  @RequestMapping("/test")
-//  String test() {
-//	  
-//	  PrenomRepository prenomRepo = appContext.getBean(PrenomRepository.class);
-//	  Prenom p1=new Prenom();
-//	  p1.setEffectif(25);
-//	  p1.setLibelle("Aude");
-//	  prenomRepo.save(p1);
-//	  
-//    return "test";
-//  }
+
 
 //  @RequestMapping("/db")
 //  String db(Map<String, Object> model) {
