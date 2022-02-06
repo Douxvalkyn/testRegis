@@ -7,7 +7,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,13 +32,15 @@ public class PrenomResource {
 		for (Prenom p:prenoms) {
 			results.add(p);
 		}
-		Prenom p1=new Prenom();
-		  p1.setEffectif(25);
-		  p1.setLibelle("Aude");
-		  results.add(p1);
-		  mainLog.info("nb prenoms " + results.size());
+	  mainLog.info("nb prenoms " + results.size());
 		
 		return results;
+	}
+	
+	@PostMapping(consumes= MediaType.APPLICATION_JSON_VALUE,produces=MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Prenom> createPrenom(@RequestBody Prenom prenom){
+		Prenom managePrenom = prenomRepository.save(prenom);
+		return ResponseEntity.ok(managePrenom);
 	}
 	
 	
