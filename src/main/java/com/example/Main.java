@@ -40,6 +40,12 @@ public class Main {
     return "index";
   }
   
+  
+  @RequestMapping("/test")
+  String test() {
+    return "test";
+  }
+  
   public void run(String... args) {
 	  PrenomRepository prenomRepo = appContext.getBean(PrenomRepository.class);
 	  Iterable<Prenom> prenoms = prenomRepo.findAll();

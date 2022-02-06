@@ -5,5 +5,6 @@ CREATE TABLE PRENOM(
 );
 
 INSERT INTO PRENOM (id, libelle, effectif) VALUES (1,'Paul', 32);
+INSERT INTO PRENOM (id, libelle, effectif) VALUES (8,'Valery', 100);
 
 
