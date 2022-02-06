@@ -46,23 +46,23 @@ public class Main {
     return "test";
   }
   
-  public void run(String... args) {
-	  PrenomRepository prenomRepo = appContext.getBean(PrenomRepository.class);
-	  Iterable<Prenom> prenoms = prenomRepo.findAll();
-		List<Prenom> results = new ArrayList<Prenom>();
-		for (Prenom p:prenoms) {
-			results.add(p);
-		}
-
-	  mainLog.info("size  " + results.size());
-		Prenom p1=new Prenom();
-		  p1.setEffectif(25);
-		  p1.setLibelle("Aude");
-		  results.add(p1);
-		  mainLog.info("p1  " + p1);
-	  prenomRepo.save(p1);
-	
-}
+//  public void run(String... args) {
+//	  PrenomRepository prenomRepo = appContext.getBean(PrenomRepository.class);
+//	  Iterable<Prenom> prenoms = prenomRepo.findAll();
+//		List<Prenom> results = new ArrayList<Prenom>();
+//		for (Prenom p:prenoms) {
+//			results.add(p);
+//		}
+//
+//	  mainLog.info("size  " + results.size());
+//		Prenom p1=new Prenom();
+//		  p1.setEffectif(25);
+//		  p1.setLibelle("Aude");
+//		  results.add(p1);
+//		  mainLog.info("p1  " + p1);
+//	  prenomRepo.save(p1);
+//	
+//}
   
 
 
