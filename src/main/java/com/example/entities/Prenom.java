@@ -1,4 +1,4 @@
-package entities;
+package com.example.entities;
 
 import java.util.Objects;
 
@@ -13,10 +13,10 @@ import javax.persistence.Id;
 public class Prenom {
 
 	@Id
-	@GeneratedValue(strategy= GenerationType.AUTO)
-	private int id;
-	private String libelle;
-	private int effectif;
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	protected int id;
+	protected String libelle;
+	protected int effectif;
 	
 	
 	

@@ -1,8 +1,8 @@
-package repositories;
+package com.example.repositories;
 
 import org.springframework.data.repository.CrudRepository;
 
-import entities.Prenom;
+import com.example.entities.Prenom;
 
 public interface PrenomRepository  extends CrudRepository<Prenom, Integer>{
 
