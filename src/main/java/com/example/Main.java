@@ -1,31 +1,38 @@
 package com.example;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.sql.DataSource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.entities.Prenom;
 import com.example.repositories.PrenomRepository;
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
 
 @Controller
 @SpringBootApplication
 public class Main {
 
-//  @Value("${spring.datasource.url}")
-//  private String dbUrl;
+  @Value("${spring.datasource.url}")
+  private String dbUrl;
 
-//  @Autowired
-//  private DataSource dataSource;
+  @Autowired
+  private DataSource dataSource;
 
-	static Logger mainLog = LoggerFactory.getLogger(Main.class);
+  static Logger mainLog = LoggerFactory.getLogger(Main.class);
 	
 	
   public static void main(String[] args) throws Exception {
